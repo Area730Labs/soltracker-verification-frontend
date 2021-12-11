@@ -48,8 +48,8 @@ export default function VerifyBot() {
                     sig_hex: toHexString(response),
                     sig_tpl_ver: "1",
                     pubkey: publicKey?.toBase58(),
-                    discord_token: discordToken,
-                    discord_token_hash: discordTokenValue,
+                    discord_token: discordTokenValue,
+                    discord_token_hash: "",//discordTokenValue,
                     timestamp: ts
                 }
 
