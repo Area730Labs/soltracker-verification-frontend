@@ -50,20 +50,9 @@ export function AppRouter() {
     return (
         <div>
             <header className="menuLine">
-                <Menu>
-                    <Portal>
-                        <MenuList>
-                            <MenuItem><a href="/my">Active escrows</a></MenuItem>
-                            <MenuItem><a href="/sell">Sell NFT</a></MenuItem>
-                            <MenuDivider />
-                            <MenuItem><a onClick={toggleColorMode}>{(colorMode == "dark" as ColorMode) ? "Light" : "Dark"} theme</a></MenuItem>
-                        </MenuList>
-                    </Portal>
-                  
-                </Menu>
-                <Box marginLeft="10px" display="inline-block">
+                <Box marginLeft="10px" display="inline-block"  >
                     <Link href="/">
-                        <b>NFT <LockIcon /> veryfication bot </b>
+                        <b>NFT <LockIcon   color="green.500"/> verification bot </b>
                     </Link>
                     by <a href="https://soltracker.io">soltracker.io</a>
                 </Box>

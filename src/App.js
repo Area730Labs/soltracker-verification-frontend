@@ -28,12 +28,12 @@ function App() {
     getSolletWallet({ NetworkToUse }),
   ], [NetworkToUse]);
 
-  return <ChakraProvider>
+  return <ChakraProvider >
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect={true}>
         <AppProvider>
           <BrowserRouter>
-            <Container className="App" maxW="l" width="970px" >
+            <Container className="App" maxW='container.sm' minH="80%">
               <AppRouter />
             </Container>
           </BrowserRouter>

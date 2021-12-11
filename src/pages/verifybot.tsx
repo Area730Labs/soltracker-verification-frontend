@@ -31,7 +31,6 @@ export default function VerifyBot() {
         window.location.href = "https://api.soltracker.io/verify_user_discord"
     }
 
-
     function verifyBot() {
 
         var enc = new TextEncoder();
@@ -93,7 +92,7 @@ export default function VerifyBot() {
     }
 
     if (discordToken) {
-        return <Box p={6} marginTop="110px">
+        return <Box p={6} marginTop="110px" >
             <Text
                 bgGradient="linear(to-l, #7928CA, #FF0080)"
                 bgClip="text"
@@ -102,13 +101,14 @@ export default function VerifyBot() {
                 textAlign="center"
             >Follow next steps</Text>
             <Text
-                bgGradient="linear(to-l, #7928CA, #FF0080)"
-                bgClip="text"
+              bgGradient="linear(to-l, #7928CA, #FF0080)"
+              bgClip="text"
                 fontSize="xl"
                 fontWeight="extrabold"
                 textAlign="center"
             >to get verified</Text>
-            <List spacing={3}>
+
+            <List spacing={3}  fontWeight="bold">
                 <ListItem>
                     <ListIcon as={CheckCircleIcon} color='green.500' />
                 Connect a wallet
