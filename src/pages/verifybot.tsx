@@ -1,6 +1,5 @@
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { useToast, Button, Box, toast, Text, Link, List, ListItem, ListIcon } from "@chakra-ui/react"
-import { sha256 } from "@project-serum/anchor/dist/cjs/utils";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletModalProvider, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import axios from "axios";
@@ -28,6 +27,7 @@ export default function VerifyBot() {
     if (discordTokenValue != undefined && discordTokenValue != '') {
         discordToken = true;
     } else {
+        // discordToken = true;
         window.location.href = "https://api.soltracker.io/verify_user_discord"
     }
 
@@ -88,6 +88,8 @@ export default function VerifyBot() {
                 })
                 console.log('failed to sign a message' + err)
             })
+        } else {
+            console.warn('sign message is null. pubkey is ',publicKey?.toBase58())
         }
     }
 
