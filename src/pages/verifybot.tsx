@@ -27,6 +27,8 @@ export default function VerifyBot() {
 
     if (discordTokenValue != undefined && discordTokenValue != '') {
         discordToken = true;
+    } else {
+        window.location.href = "https://api.soltracker.io/verify_user_discord"
     }
 
 
