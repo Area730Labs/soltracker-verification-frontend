@@ -71,10 +71,10 @@
   cursor:unset;
 }
 
-.walletBtn,.wallet-adapter-dropdown{
+/* .walletBtn,.wallet-adapter-dropdown{
   float: right!important;
   height: 45px!important;
-} 
+}  */
 
 .menuLine {
   margin-top: 20px;

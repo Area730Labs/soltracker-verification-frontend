@@ -89,12 +89,12 @@ export default function VerifyBot() {
                 console.log('failed to sign a message' + err)
             })
         } else {
-            console.warn('sign message is null. pubkey is ',publicKey?.toBase58())
+            console.warn('sign message is null. pubkey is ', publicKey?.toBase58())
         }
     }
 
     if (discordToken) {
-        return <Box p={6} marginTop="110px" >
+        return <Box p={6} marginTop="20px" >
             <Text
                 bgGradient="linear(to-l, #7928CA, #FF0080)"
                 bgClip="text"
@@ -103,28 +103,38 @@ export default function VerifyBot() {
                 textAlign="center"
             >Follow next steps</Text>
             <Text
-              bgGradient="linear(to-l, #7928CA, #FF0080)"
-              bgClip="text"
+                bgGradient="linear(to-l, #7928CA, #FF0080)"
+                bgClip="text"
                 fontSize="xl"
                 fontWeight="extrabold"
+                marginBottom="20px;"
                 textAlign="center"
             >to get verified</Text>
 
-            <List spacing={3}  fontWeight="bold">
+            <List spacing={3} fontWeight="bold">
                 <ListItem>
-                    <ListIcon as={CheckCircleIcon} color='green.500' />
-                Connect a wallet
-                <WalletModalProvider>
+                    <span>1.</span> 
+                    {/* <ListIcon as={CheckCircleIcon} color='green.500' /> */}
+                    <span style={{ marginLeft: "10px" }}> Connect a wallet with a button below:
+                    </span>
+                </ListItem>
+                <ListItem textAlign="center">
+                    <WalletModalProvider>
                         <WalletMultiButton className="walletBtn" />
                     </WalletModalProvider>
                 </ListItem>
                 <ListItem>
-                    <ListIcon as={CheckCircleIcon} color='green.500' />
-                    <Button variant="outline" onClick={verifyBot} colorScheme="green">Verify</Button>  ownership of a wallet with nft
+                    {/* <ListIcon as={CheckCircleIcon} color='green.500' /> */}
+                    <span>2.</span> 
+                    <span style={{ marginLeft: "10px" }}> Verify ownership of a wallet by pressing and signing a message with button below:</span>
             </ListItem>
+                <ListItem textAlign="center">
+                    <Button onClick={verifyBot} size="lg" bgGradient="linear(to-l, #7928CA, #FF0080)" color="white">Verify</Button>
+                </ListItem>
                 <ListItem>
-                    <ListIcon as={CheckCircleIcon} color='green.500' />
-    Go to discord and check out your verified nft owner roles
+                    {/* <ListIcon as={CheckCircleIcon} color='green.500' /> */}
+                    <span>3.</span> 
+                    <span style={{ marginLeft: "10px" }}> Go to discord and check out your verified nft owner roles</span>
   </ListItem>
             </List>
 
@@ -139,7 +149,7 @@ export default function VerifyBot() {
                     fontWeight="extrabold"
                     textAlign="center"
                 >Discord not verified.</Text>
-                    <Text
+                <Text
                     bgGradient="linear(to-l, #7928CA, #FF0080)"
                     bgClip="text"
                     fontSize="xl"
