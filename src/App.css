@@ -76,6 +76,10 @@
   height: 45px!important;
 }  */
 
+.walletBtn {
+  margin: 0 auto;
+}
+
 .menuLine {
   margin-top: 20px;
 }
