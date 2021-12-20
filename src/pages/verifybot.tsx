@@ -91,7 +91,7 @@ export default function VerifyBot() {
                 })
             }).catch(function (err) {
                 toast({
-                    title: "Message sign request was declined",
+                    title: "Message sign request were declined: "+err.message,
                     position: "top-right",
                     status: "warning",
                     duration: 5000,
