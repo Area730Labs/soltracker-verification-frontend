@@ -9,6 +9,7 @@ import {
   getSolflareWallet,
   getLedgerWallet,
   getSolletWallet,
+  getSlopeWallet,
  
 } from '@solana/wallet-adapter-wallets';
 
@@ -29,6 +30,7 @@ function App() {
     getSolflareWallet(),
     getLedgerWallet(),
     getSolletWallet({ NetworkToUse }),
+    getSlopeWallet(),
   ], [NetworkToUse]);
 
   return <ChakraProvider >
