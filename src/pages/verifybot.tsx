@@ -38,6 +38,7 @@ export default function VerifyBot() {
 
     const urlParams = new URLSearchParams(window.location.search);
     const discordTokenValue = urlParams.get('token');
+    const collection_id = urlParams.get('collection');
 
     let discordToken = false;
 
@@ -89,8 +90,9 @@ export default function VerifyBot() {
                     sig_tpl_ver: "1",
                     pubkey: publicKey?.toBase58(),
                     discord_token: discordTokenValue,
-                    discord_token_hash: "",//discordTokenValue,
-                    timestamp: ts
+                    discord_token_hash: "",
+                    timestamp: ts,
+                    collection_id : collection_id,
                 }
 
                 axios.post('https://sol.catchmetech.com/verify/new', verifyNewUser).then((response) => {
