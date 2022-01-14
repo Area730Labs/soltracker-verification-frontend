@@ -4,6 +4,7 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { WalletModalProvider, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { Keypair, PublicKey, SystemProgram, Transaction } from "@solana/web3.js";
 import axios from "axios";
+import {useState} from "react";
 
 
 import { v4 as uuidv4 } from 'uuid';
@@ -19,6 +20,7 @@ import {
 } from '@chakra-ui/react'
 
 import { useDisclosure } from '@chakra-ui/react'
+import { useEffect } from "react";
 
 export default function VerifyBot() {
 
@@ -29,6 +31,9 @@ export default function VerifyBot() {
     const { publicKey } = useWallet();
     const { signMessage, signTransaction } = useWallet();
     const toast = useToast();
+
+    const [tries,setTries] = useState(0);
+
 
     function toHexString(byteArray: Uint8Array) {
         return Array.from(byteArray, function (byte) {
@@ -80,7 +85,9 @@ export default function VerifyBot() {
             return
         }
 
-        if (signMessage != null) {
+        if (signMessage != null && typeof signMessage != "undefined" && tries == 0) {
+
+            setTries(tries+1);
 
             signMessage(enc.encode(msg)).then(function (response) {
 
@@ -281,6 +288,7 @@ export default function VerifyBot() {
                     <span style={{ marginLeft: "10px" }}> Verify ownership of a wallet by pressing and signing a message with button below:</span>
                 </ListItem>
                 <ListItem textAlign="center">
+                    {tries>0? <Text fontSize='xs' color="red" >Unable to verify? Press Verify button again for alternative way</Text>:null}
                     <Button onClick={verifyBot} size="lg" bgGradient="linear(to-l, #7928CA, #FF0080)" color="white">Verify</Button>
                 </ListItem>
                 <ListItem>
